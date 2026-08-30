@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://neurovideo.ratacrm.ru/sitemap-index.xml
