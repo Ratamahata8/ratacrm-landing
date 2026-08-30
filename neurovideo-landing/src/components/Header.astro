@@ -1,0 +1,4 @@
+---
+import { site, asset } from '../content/site';
+---
+<header class="header"><div class="container header-inner"><a class="brand" href={import.meta.env.BASE_URL}><strong>{site.name}</strong><small>{site.byline}</small></a><nav aria-label="Основная навигация">{site.nav.map(item=><a href={`${import.meta.env.BASE_URL}${item.url}`}>{item.label}</a>)}</nav><a class="button button-small" href="#guide">{site.product.headerCta}</a></div></header>

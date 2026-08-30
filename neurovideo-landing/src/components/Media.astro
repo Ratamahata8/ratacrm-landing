@@ -1,0 +1,6 @@
+---
+import { asset } from '../content/site';
+interface Props { poster:string; video?:string; alt:string; eager?:boolean; }
+const {poster,video,alt,eager=false}=Astro.props;
+---
+<div class="media-frame"><img src={asset(poster)} alt={alt} width="1200" height="750" loading={eager?'eager':'lazy'} fetchpriority={eager?'high':'auto'}>{video && <video muted playsinline preload="metadata" poster={asset(poster)} aria-label={alt}><source src={asset(video)} type="video/mp4"></video>}<span class="play" aria-hidden="true">▶</span></div>
