@@ -41,6 +41,6 @@ export const site = {
     {q:'Можно ли вернуть оплату?',a:'Условия возврата и отказа от цифрового материала определяются публичной офертой.'},
     {q:'Как связаться с автором?',a:'Напишите в Telegram-бот или воспользуйтесь контактами в нижней части страницы.'}
   ],
-  business:{performer:'Михаил Лопаткин',status:'плательщик налога на профессиональный доход (самозанятый)',inn:'{{INN}}',email:'{{EMAIL}}',telegram:'https://t.me/ratamahata_bot'},
+  business:{performer:'Лопаткин Михаил Сергеевич',status:'плательщик налога на профессиональный доход (самозанятый)',inn:'507901508484',email:'mrlopat@mail.ru',telegram:'https://t.me/ratamahata_bot'},
   legal:{offer:'/offer',privacy:'/privacy',contacts:'/contacts'}
 };

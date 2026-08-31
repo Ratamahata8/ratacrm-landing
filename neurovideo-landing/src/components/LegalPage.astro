@@ -1,7 +1,33 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'; import Header from './Header.astro'; import Footer from './Footer.astro'; import {site} from '../content/site';
-interface Props { title:string; intro:string; kind:'offer'|'privacy'|'contacts' }
-const {title,intro,kind}=Astro.props;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+interface Props { title: string; description: string; eyebrow?: string }
+const { title, description, eyebrow = 'NEUROVIDEO / ДОКУМЕНТЫ' } = Astro.props;
 ---
-<BaseLayout title={`${title} — NeuroVideo`} description={intro}><Header/><main class="legal container"><p class="eyebrow">NEUROVIDEO / ДОКУМЕНТЫ</p><h1>{title}</h1><p class="legal-lede">{intro}</p>{kind==='contacts'?<section><h2>Контактные данные</h2><p>Исполнитель: {site.business.performer}</p><p>Статус: {site.business.status}</p><p>ИНН: {site.business.inn}</p><p>Email: {site.business.email}</p><p>Telegram: <a href={site.business.telegram}>{site.business.telegram}</a></p><aside>TODO: укажите ИНН и email в <code>src/content/site.ts</code> до публикации.</aside></section>:<section><h2>Текст документа готовится</h2><p>На этой странице будет размещена финальная редакция документа. До начала приёма платежей владелец сайта должен добавить юридически проверенный текст и заполнить реквизиты.</p><aside>TODO: заменить этот блок финальным текстом {kind==='offer'?'публичной оферты':'политики конфиденциальности'}. Юридические условия намеренно не выдуманы.</aside><h2>Реквизиты исполнителя</h2><p>{site.business.performer} · ИНН {site.business.inn} · {site.business.email}</p></section>}</main><Footer/></BaseLayout>
-<style>.legal{padding-top:100px;padding-bottom:140px;max-width:960px}.legal h1{white-space:normal}.legal-lede{font-size:21px;color:var(--muted);max-width:760px}.legal section{background:var(--surface);padding:45px;margin-top:55px;border:1px solid var(--border);border-radius:16px}.legal section h2{font-size:28px;margin:35px 0 15px}.legal section h2:first-child{margin-top:0}.legal aside{border-left:3px solid var(--accent);background:var(--soft);padding:20px;margin-top:30px}.legal a{text-decoration:underline}@media(max-width:700px){.legal{padding-top:70px}.legal section{padding:25px}.legal h1{font-size:44px}}</style>
+<BaseLayout title={`${title} — NeuroVideo`} description={description}>
+  <Header />
+  <main class="legal container">
+    <a class="back-link" href={import.meta.env.BASE_URL}>← Вернуться на главную</a>
+    <article>
+      <p class="eyebrow">{eyebrow}</p>
+      <slot />
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
+<style>
+  .legal{padding-top:72px;padding-bottom:120px;max-width:960px}
+  .back-link{display:inline-block;margin-bottom:48px;font-weight:650;border-bottom:1px solid var(--text)}
+  article{background:var(--surface);padding:clamp(28px,6vw,72px);border:1px solid var(--border);border-radius:18px}
+  article :global(h1){font-size:clamp(40px,6vw,66px);line-height:1.02;white-space:normal;margin:14px 0 18px}
+  article :global(h2){font-size:clamp(24px,3vw,32px);line-height:1.2;margin:52px 0 20px;letter-spacing:-.025em}
+  article :global(h3){font-size:20px;line-height:1.35;margin:0 0 28px;color:var(--muted)}
+  article :global(p),article :global(li){line-height:1.75}
+  article :global(p){margin-bottom:18px}
+  article :global(ul){padding-left:24px;margin:0 0 24px}
+  article :global(a){color:#c83f28;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+  article :global(.details){margin:28px 0 36px;padding:24px;border-left:3px solid var(--accent);background:var(--soft)}
+  article :global(.details p:last-child){margin-bottom:0}
+  @media(max-width:700px){.legal{padding-top:42px;padding-bottom:80px}.back-link{margin-bottom:30px}article{border-radius:12px}article :global(h2){margin-top:40px}article :global(p),article :global(li){line-height:1.65}}
+</style>
