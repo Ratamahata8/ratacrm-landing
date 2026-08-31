@@ -4,33 +4,33 @@ export const asset = (path: string) => `${root}${path.replace(/^\//, '')}`;
 export const site = {
   name: 'NEUROVIDEO', byline: 'by Rata_mult',
   title: 'NeuroVideo — практические разборы AI-видео',
-  description: 'Пошаговые разборы создания AI-видео: референсы, промты, настройки MiniMax H3, Seedance, WAN и Comfy Cloud.',
+  description: 'Пошаговые разборы создания AI-видео: референсы, промты, настройки и весь путь до готового ролика.',
   nav: [{label:'Разборы',url:'#works'},{label:'Процесс',url:'#process'},{label:'Об авторе',url:'#about'},{label:'FAQ',url:'#faq'}],
   hero: {
-    badge: 'Практические AI-видео разборы', titleLead: 'Смотри ролик.\nПовторяй ', titleAccent: 'по шагам.',
-    subtitle: 'Разборы конкретных AI-видео: референсы, промты, настройки и весь путь до готового кадра.',
-    primaryCta: {label:'▶ Смотреть работы',url:'#works'}, secondaryCta:{label:'Что внутри гайда',url:'#guide'},
-    poster:'/images/hero-poster.svg', video:'/videos/hero.mp4'
+    badge: 'Практические AI-видео разборы', titleLead: 'Повтори этот AI-ролик.\n', titleAccent: 'Без догадок и лишних генераций.',
+    subtitle: 'Получишь готовый пошаговый разбор: какие референсы подготовить, что написать в промте и какие настройки использовать.',
+    primaryCta: {label:'Забрать пошаговый гайд — 290 ₽',url:'#guide'}, secondaryCta:{label:'Что внутри гайда',url:'#guide'},
+    poster:'/images/hero-poster.svg', video:'/videos/moskvi4.mp4'
   },
   benefits: [
     {icon:'↗',title:'Пошаговые разборы',text:'от референса до финала'}, {icon:'⌁',title:'Конкретные настройки',text:'без воды и теории'},
-    {icon:'◎',title:'Рабочие связки',text:'MiniMax H3, Comfy и др.'}, {icon:'□',title:'Доступ к материалу',text:'через Telegram'}
+    {icon:'◎',title:'Рабочий процесс',text:'от идеи до готового ролика'}, {icon:'□',title:'Доступ к материалу',text:'через Telegram'}
   ],
   works: {
     title:'Видео — сначала.\nТеория — только нужная.', description:'На странице главную роль играют реальные ролики. Каждый материал показывает конечный результат, а уже затем раскрывает пайплайн его создания.', link:{label:'Смотреть все разборы →',url:'#works'},
     items:[
-      {badge:'MINIMAX H3',title:'Reference → prompt → animation',poster:'/images/case-01.svg',video:'/videos/case-01.mp4',alt:'Кинематографичный кадр из AI-видео',stages:['Референсы','Промт','Генерация','Финал']},
+      {badge:'ПОШАГОВЫЙ РАЗБОР',title:'Reference → prompt → animation',poster:'/images/case-01.svg',video:'/videos/case-01.mp4',alt:'Кинематографичный кадр из AI-видео',stages:['Референсы','Промт','Генерация','Финал']},
       {badge:'AI VIDEO WORKFLOW',title:'Production without guesswork',poster:'/images/case-02.svg',video:'/videos/case-02.mp4',alt:'Сцена из процесса производства AI-видео',stages:['Идея','Кадр','Движение','Сборка']}
     ]
   },
   process:[
     {number:'01',title:'Референсы',text:'Готовим изображения персонажа, объекта, композиции и стиля.'},
     {number:'02',title:'Промт',text:'Раскладываем действие по таймингам, планам и движениям камеры.'},
-    {number:'03',title:'Генерация',text:'MiniMax H3, Seedance, WAN, Comfy Cloud — только нужные настройки.'},
+    {number:'03',title:'Генерация',text:'Используем только нужные настройки и получаем предсказуемый результат.'},
     {number:'04',title:'Готовый ролик',text:'Получаем шот и при необходимости доводим его в production-инструментах.'}
   ],
-  product:{title:'Повтори конкретный\nAI-ролик за 290 ₽.',price:'290 ₽',headerCta:'Гайд · 290 ₽',description:'Электронный пошаговый гайд. Доступ к материалам предоставляется через Telegram.',features:['Подготовка референсов','Готовый промт','MiniMax H3 / Comfy Cloud','Настройки генерации','Весь порядок действий','Доступ к материалу'],accessText:'Доступ к приобретённому материалу через Telegram',paymentUrl:'#payment-placeholder',buttonLabel:'Получить гайд',note:'Без подписки и скрытых платежей',visual:'/images/product-visual.svg'}, // TODO: replace paymentUrl with the real payment link.
-  author:{name:'Михаил Лопаткин',role:'3D · Animation · AI Video',bio:'Работаю с визуальным контентом, 3D и анимацией и использую генеративные модели как часть production-пайплайна. В NeuroVideo собираю практические разборы: что подготовить, что написать модели и какие настройки использовать, чтобы получить конкретный результат.',image:'/images/author.svg',tools:['MiniMax H3','Seedance','WAN','Comfy Cloud','3D','Compositing']},
+  product:{title:'Повтори конкретный\nAI-ролик за 290 ₽.',price:'290 ₽',headerCta:'Гайд · 290 ₽',description:'Электронный пошаговый гайд. Доступ к материалам предоставляется через Telegram.',features:['Подготовка референсов','Готовый промт','Настройки генерации','Разбор каждого этапа','Весь порядок действий','Доступ к материалу'],accessText:'Доступ к приобретённому материалу через Telegram',paymentUrl:'#payment-placeholder',buttonLabel:'Получить гайд',note:'Без подписки и скрытых платежей',visual:'/images/product-visual.svg'}, // TODO: replace paymentUrl with the real payment link.
+  author:{name:'Михаил Лопаткин',role:'3D · Animation · AI Video',bio:'Работаю с визуальным контентом, 3D и анимацией и использую генеративные инструменты как часть production-пайплайна. В NeuroVideo собираю практические разборы: что подготовить, что написать в промте и какие настройки использовать, чтобы получить конкретный результат.',image:'/images/mikhail-lopatkin.png'},
   telegram:{title:'Бесплатные разборы продолжаются в Telegram',description:'Канал — примеры и полезные материалы. Бот — конкретные туториалы и гайды.',channelLabel:'Telegram-канал',channelUrl:'#telegram-channel-placeholder',botLabel:'Открыть бота',botUrl:'https://t.me/ratamahata_bot'}, // TODO: add Telegram channel URL.
   faq:[
     {q:'Что я получу после оплаты?',a:'Доступ к приобретённому пошаговому материалу: референсам, промту, настройкам и порядку создания ролика.'},
