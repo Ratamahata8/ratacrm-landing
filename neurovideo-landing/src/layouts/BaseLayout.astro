@@ -4,12 +4,12 @@ import { site, asset } from '../content/site';
 interface Props { title?: string; description?: string; }
 const { title = site.title, description = site.description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const personSchema = {'@context':'https://schema.org','@type':'Person',name:site.author.name,jobTitle:site.author.role,url:canonical.origin};
+const websiteSchema = {'@context':'https://schema.org','@type':'WebSite',name:site.name,url:canonical.origin,description};
 ---
 <!doctype html><html lang="ru"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title><meta name="description" content={description}><link rel="canonical" href={canonical}>
 <meta property="og:type" content="website"><meta property="og:title" content={title}><meta property="og:description" content={description}><meta property="og:url" content={canonical}><meta property="og:image" content={new URL(asset(site.hero.poster), canonical.origin)}>
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content={title}><meta name="twitter:description" content={description}>
-<link rel="icon" href={asset('/icons/favicon.svg')} type="image/svg+xml"><script type="application/ld+json" set:html={JSON.stringify(personSchema)} is:inline />
+<link rel="icon" href={asset('/icons/favicon.svg')} type="image/svg+xml"><script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} is:inline />
 </head><body><slot /></body></html>
